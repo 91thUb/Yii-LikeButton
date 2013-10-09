@@ -13,7 +13,6 @@ $.fn.LikeButton = function(o) {
 		var div = $(this),
 			txt = $('span.name', div),
 			num = $('span.cnt', div);
-		
 	
 		txt.css('cursor', 'pointer');
 		txt.click(function(){
@@ -29,6 +28,7 @@ $.fn.LikeButton = function(o) {
 			
 		// Update in html	
 		num.text(parseInt(num.text(),10)+inc);
+		o.alreadyVote = !o.alreadyVote;
 		
 		// Send to server
 		if (url) $.ajax(url);

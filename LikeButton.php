@@ -7,8 +7,8 @@ class LikeButton extends CWidget {
 		   $id=0,
 		   $alreadyVote='false',
 		   $incUrl='false',
-		   $decUrl='false';
-	
+		   $decUrl='false',
+		   $title='Like';	
 	
 	public function init()
 	{		
@@ -39,6 +39,7 @@ class LikeButton extends CWidget {
 		$this->render('show', array(
 				'count'=>$this->count,
 				'id'=>$this->id,
+				'title'=>$this->title,
 				'alreadyVote'=>$this->alreadyVote,
 				'incUrl'=>$this->incUrl,
 				'decUrl'=>$this->decUrl,				
