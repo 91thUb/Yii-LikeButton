@@ -20,16 +20,16 @@ Install
 3. Define component in config/main.php
 
 ````php
->'import'=>array(
->		.....
->		'application.extensions.LikeButton.*',
->	),
+'import'=>array(
+		.....
+		'application.extensions.LikeButton.*',
+	),
 ````
 
 Usage
 =====
 
-Insert in your view 
+Insert into your view 
 
 ````php
 $this->widget('LikeButton', array(
