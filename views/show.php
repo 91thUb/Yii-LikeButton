@@ -12,7 +12,7 @@ $('#<? echo $cssid; ?>').LikeButton(
 		{
 			alreadyVote:<?php echo $alreadyVote; ?>,
 			incUrl:"<?php echo $incUrl; ?>",
-			decUrl:"<?php echo $decUrl; ?>"								
+			decUrl:"<?php echo $decUrl; ?>"					
 		});
 });
 </script>
