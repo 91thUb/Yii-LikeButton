@@ -10,7 +10,9 @@ It's look like this:
 Requirements
 ============
 - Yii 1.1.13 or hight
-- Bootstrap css (for heart icon)
+- Bootstrap Glyphicons (for heart icon)
+- Bootstrap tooltop.js
+- Bootstrap popover.js
 
 Install
 =======

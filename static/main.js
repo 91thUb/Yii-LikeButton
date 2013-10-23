@@ -12,7 +12,8 @@ $.fn.LikeButton = function(o) {
 	
 		var div = $(this),
 			txt = $('span.name', div),
-			num = $('span.cnt', div);
+			num = $('span.cnt', div),
+			self = this;
 	
 		txt.css('cursor', 'pointer');
 		txt.click(function(){
@@ -31,7 +32,19 @@ $.fn.LikeButton = function(o) {
 		o.alreadyVote = !o.alreadyVote;
 		
 		// Send to server
-		if (url) $.ajax(url);
+		if (url) $.ajax(url).done(function (data) {
+			if (data != 1)
+				{
+				$(self).popover({
+					content: data,
+					animation: true,
+					html: true,
+					placement: 'top'
+				});
+				
+				$(self).popover('show');
+				}
+		});
 		
 		});	
 		
