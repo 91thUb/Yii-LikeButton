@@ -12,6 +12,7 @@ $.fn.LikeButton = function(o) {
 	
 	return this.each(function() {
 	
+		
 		var div = $(this),
 			txt = $('span.name', div),
 			num = $('span.cnt', div),
@@ -62,11 +63,14 @@ $.fn.LikeButton = function(o) {
 							content: text,
 							animation: true,
 							html: true,
-							placement: 'top'
+							placement: 'top',
 							
 						});						
 					
 						$(self).popover('show');
+						setTimeout(function () {
+							$(self).popover('hide');
+					    }, 3000);
 					
 				}
 		});
