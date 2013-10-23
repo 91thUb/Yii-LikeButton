@@ -8,7 +8,8 @@ class LikeButton extends CWidget {
 		   $alreadyVote='false',
 		   $incUrl='false',
 		   $decUrl='false',
-		   $title='Like';	
+		   $title='Like',	
+		   $OnClickPopoverText='';
 	
 	public function init()
 	{		
@@ -42,7 +43,8 @@ class LikeButton extends CWidget {
 				'title'=>$this->title,
 				'alreadyVote'=>$this->alreadyVote,
 				'incUrl'=>$this->incUrl,
-				'decUrl'=>$this->decUrl,				
+				'decUrl'=>$this->decUrl,
+				'OnClickPopoverText'=>$this->OnClickPopoverText,				
 				));
 	}
 	

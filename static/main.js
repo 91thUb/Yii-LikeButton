@@ -5,6 +5,8 @@ $.fn.LikeButton = function(o) {
 	       	alreadyVote:false, // Already have a vote?
 	 		incUrl:false,	// url to get when need increment counter
 	 		decUrl:false,	// url to get when need decrement counter
+	 		OnClickPopoverText:false,
+	 		count:0,
 	    }, o || {});
 	 
 	
@@ -17,6 +19,22 @@ $.fn.LikeButton = function(o) {
 	
 		txt.css('cursor', 'pointer');
 		txt.click(function(){
+			/*
+			if (o.OnClickPopoverText)
+				{
+				o.OnClickPopoverText = $("<div/>").html(o.OnClickPopoverText);
+				
+				$(self).popover({
+					content: o.OnClickPopoverText,
+					animation: true,
+					html: true,
+					placement: 'top',
+					delay: { show: 500, hide: 100 }
+					
+				});
+				$(self).popover('togle');
+				}
+			*/
 			
 		var inc=1;
 		var url=o.incUrl;	
@@ -35,14 +53,21 @@ $.fn.LikeButton = function(o) {
 		if (url) $.ajax(url).done(function (data) {
 			if (data != 1)
 				{
-				$(self).popover({
-					content: data,
-					animation: true,
-					html: true,
-					placement: 'top'
-				});
-				
-				$(self).popover('show');
+				num.text(o.count);
+				var text=data;
+				/*if (o.OnClickPopoverText)
+					text = o.OnClickPopoverText+data;
+						*/
+						$(self).popover({
+							content: text,
+							animation: true,
+							html: true,
+							placement: 'top'
+							
+						});						
+					
+						$(self).popover('show');
+					
 				}
 		});
 		
