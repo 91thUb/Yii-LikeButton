@@ -37,6 +37,9 @@ class LikeButton extends CWidget {
 	public function run()
 	{		
 		 
+		
+		$this->OnClickPopoverText = trim(preg_replace('/\s+/', ' ', $this->OnClickPopoverText));
+		
 		$this->render('show', array(
 				'count'=>$this->count,
 				'id'=>$this->id,

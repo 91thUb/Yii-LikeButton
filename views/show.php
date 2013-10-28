@@ -14,7 +14,7 @@ $('#<? echo $cssid; ?>').LikeButton(
 			incUrl:"<?php echo $incUrl; ?>",
 			decUrl:"<?php echo $decUrl; ?>",
 			count: <?php echo $count; ?>,
-			//OnClickPopoverText:$('<?php echo $OnClickPopoverText; ?>').html()					
+			OnClickPopoverText:'<?php echo $OnClickPopoverText; ?>',					
 		});
 });
 </script>

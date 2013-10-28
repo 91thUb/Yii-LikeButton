@@ -20,22 +20,8 @@ $.fn.LikeButton = function(o) {
 	
 		txt.css('cursor', 'pointer');
 		txt.click(function(){
-			/*
-			if (o.OnClickPopoverText)
-				{
-				o.OnClickPopoverText = $("<div/>").html(o.OnClickPopoverText);
-				
-				$(self).popover({
-					content: o.OnClickPopoverText,
-					animation: true,
-					html: true,
-					placement: 'top',
-					delay: { show: 500, hide: 100 }
+			
 					
-				});
-				$(self).popover('togle');
-				}
-			*/
 			
 		var inc=1;
 		var url=o.incUrl;	
@@ -55,12 +41,10 @@ $.fn.LikeButton = function(o) {
 			if (data != 1)
 				{
 				num.text(o.count);
-				var text=data;
-				/*if (o.OnClickPopoverText)
-					text = o.OnClickPopoverText+data;
-						*/
+						
 						$(self).popover({
-							content: text,
+							trigger: 'manual',
+							content: data,
 							animation: true,
 							html: true,
 							placement: 'top',
@@ -68,11 +52,41 @@ $.fn.LikeButton = function(o) {
 						});						
 					
 						$(self).popover('show');
-						setTimeout(function () {
+					
+					/*	setTimeout(function () {
 							$(self).popover('hide');
 					    }, 3000);
-					
+					    */
 				}
+			else
+				if (o.OnClickPopoverText)
+				{
+				//o.OnClickPopoverText = $("<div/>").html(o.OnClickPopoverText);
+				
+				$(self).popover({
+					content: o.OnClickPopoverText,
+					animation: true,
+					html: true,
+					placement: 'top',		
+					trigger: 'manual',					
+				});
+				$(self).popover('show');
+				}
+			
+			
+
+			var $popover = $(self).popover();
+			$(document).on("click", function (e) {
+			    var $target = $(e.target),
+			        isPopover = $(e.target).is('[data-toggle=popover]'),
+			        inPopover = $(e.target).closest('.popover').length > 0
+			    
+
+			    //hide only if clicked on button or inside popover
+			    if (!isPopover && !inPopover) $popover.popover('hide');
+			});
+
+				
 		});
 		
 		});	
