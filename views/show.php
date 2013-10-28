@@ -1,7 +1,7 @@
 <?php 
 $cssid = 'like-button-'.$id;
 ?>
-<div class='vote' id ='<? echo $cssid; ?>'>
+<div class='vote' id ='<? echo $cssid; ?>' data-container="body">
 <i class='bicon-heart'></i>
 <span class='name'><?php echo $title; ?></span>
 <span class='cnt'><?php echo $count; ?></span>
